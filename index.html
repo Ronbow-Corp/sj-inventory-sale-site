@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ronbow San Jose Seasonal Sale Inventory</title>
+  <meta name="description" content="Ronbow San Jose showroom in-stock seasonal sale inventory.">
+  <link rel="stylesheet" href="styles.css?v=20260608-1140">
+</head>
+<body>
+  <header class="sale-hero" aria-label="Ronbow seasonal sale">
+    <nav class="topbar" aria-label="Sale navigation">
+      <a class="brand" href="#">Ronbow</a>
+      <a class="nav-link" href="#inventory">Browse Inventory</a>
+    </nav>
+    <div class="hero-layout">
+      <section class="hero-copy">
+        <p class="eyebrow">Limited Time Offer</p>
+        <h1>Ronbow Seasonal Sale</h1>
+        <p class="discount-line">50%-80% off</p>
+        <p class="hero-lede">Select in-stock vanities, mirrors, cabinets, and sinks are available now at the San Jose showroom. First come, first served. Limited stock.</p>
+        <div class="hero-actions">
+          <a class="primary-action" href="#inventory">View Available Styles</a>
+          <a class="secondary-action" href="#visit-showroom">Visit San Jose Showroom</a>
+        </div>
+        <dl class="hero-details">
+          <div><dt>Showroom</dt><dd>San Jose</dd></div>
+          <div><dt>Address</dt><dd>545 E Brokaw Rd, San Jose, CA 95112</dd></div>
+        </dl>
+      </section>
+    </div>
+  </header>
+
+  <main id="inventory" class="inventory-shell">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">San Jose Showroom</p>
+        <h1>Available In-Stock Inventory</h1>
+        <p class="lede">All listed inventory is currently shown at <strong>50%-80% off MSRP</strong>. First come, first served.</p>
+      </div>
+      <div class="stats" aria-label="Inventory summary">
+        <div><span id="statProducts">0</span><small>Styles</small></div>
+        <div><span id="statQty">0</span><small>Total Qty</small></div>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Inventory filters">
+      <label class="search">
+        <span>Search inventory</span>
+        <input id="searchInput" type="search" placeholder="Search code, name, finish, series...">
+      </label>
+      <label class="toggle">
+        <input id="hideMissing" type="checkbox">
+        <span>Hide items without photos</span>
+      </label>
+    </section>
+
+    <section class="finish-guide" aria-label="Finish code guide">
+      <div>
+        <p class="eyebrow">Finish Code Guide</p>
+        <h2>Color codes used in item numbers</h2>
+      </div>
+      <div id="finishGuide" class="finish-list"></div>
+    </section>
+
+    <section id="grid" class="product-grid" aria-live="polite"></section>
+  </main>
+
+  <footer id="visit-showroom" class="showroom-footer">
+    <div>
+      <p class="eyebrow">Need to see it in person?</p>
+      <h2>Visit our San Jose showroom.</h2>
+      <p>Our team can help confirm availability, finishes, dimensions, and compatible pieces before purchase.</p>
+    </div>
+    <address>
+      <strong>Ronbow San Jose Showroom</strong>
+      <span>545 E Brokaw Rd, San Jose, CA 95112</span>
+      <span>408.477.2904</span>
+      <span>ronbow.com</span>
+    </address>
+  </footer>
+
+  <dialog id="productDialog" class="product-dialog">
+    <button class="close" id="closeDialog" aria-label="Close">×</button>
+    <div class="dialog-layout">
+      <div class="image-stage">
+        <img id="dialogImage" alt="">
+        <div id="dialogPlaceholder" class="placeholder large">Photo coming soon</div>
+        <div class="zoom-tools" aria-label="Image zoom controls">
+          <button id="zoomOut" type="button">−</button>
+          <button id="zoomReset" type="button">Reset</button>
+          <button id="zoomIn" type="button">+</button>
+        </div>
+      </div>
+      <article class="dialog-copy">
+        <p id="dialogSeries" class="eyebrow"></p>
+        <h2 id="dialogName"></h2>
+        <dl>
+          <div><dt>Item Code</dt><dd id="dialogCode"></dd></div>
+          <div><dt>Finish</dt><dd id="dialogFinish"></dd></div>
+          <div><dt>MSRP</dt><dd id="dialogMsrp"></dd></div>
+          <div><dt>Sale Price</dt><dd id="dialogSale"></dd></div>
+          <div><dt>Discount</dt><dd id="dialogDiscount"></dd></div>
+          <div><dt>Quantity</dt><dd id="dialogQty"></dd></div>
+          <div><dt>Location</dt><dd id="dialogLocation"></dd></div>
+          <div id="componentBlock"><dt>Components</dt><dd id="dialogComponents"></dd></div>
+        </dl>
+      </article>
+    </div>
+  </dialog>
+
+  <script src="inventory-data.js?v=20260608-1140"></script>
+  <script src="app.js?v=20260608-1140"></script>
+</body>
+</html>
